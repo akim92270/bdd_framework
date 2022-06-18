@@ -4,4 +4,4 @@ Feature: Google Search Functionality
     Given user navigates to "https://www.google.com/"
     When user searches for "Tesla" on google
     Then user should see "Tesla" in the url
-    And user should see "Telsa" in the title
+    And user should see "Tesla" in the title
