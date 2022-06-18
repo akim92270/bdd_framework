@@ -20,7 +20,6 @@ public class GoogleSteps {
         googleSearchPage = new GoogleSearchPage();
     }
 
-
     //We will be writing our actual script steps here
     @When("user searches for {string} on Google")
     public void user_searches_for_on_Google(String key) {
@@ -38,9 +37,9 @@ public class GoogleSteps {
         Assert.assertTrue(driver.getTitle().contains(key));
     }
 
-    @Then("user should see results are more than {int}")
-    public void userShouldSeeResultsAreMoreThan(int results) {
-        Assert.assertTrue(Long.parseLong(googleSearchPage.resultBar.getText()
-                .split(" ")[1].replace(",", "")) > results); // 10950000000
+
+    @Then("user should see results are more than {long}")
+    public void userShouldSeeResultsAreMoreThan(long result) {
+        Assert.assertTrue(Long.parseLong(googleSearchPage.resultBar.getText().split(" ")[1].replace(",", "")) > result); // 10950000000
     }
 }

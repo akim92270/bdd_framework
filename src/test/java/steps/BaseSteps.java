@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import utilities.Driver;
 
 public class BaseSteps {
+
     WebDriver driver;
 
     @Before
