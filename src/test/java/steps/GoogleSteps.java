@@ -22,8 +22,8 @@ public class GoogleSteps {
 
 
     //We will be writing our actual script steps here
-    @When("user searches for {string} on google")
-    public void user_searches_for_on_google(String key) {
+    @When("user searches for {string} on Google")
+    public void user_searches_for_on_Google(String key) {
         //driver.findElement(By.name("q")).sendKeys(key + Keys.ENTER);
         googleSearchPage.searchInputBox.sendKeys(key + Keys.ENTER);
     }
@@ -36,5 +36,11 @@ public class GoogleSteps {
     @Then("user should see {string} in the title")
     public void user_should_see_in_the_title(String key) {
         Assert.assertTrue(driver.getTitle().contains(key));
+    }
+
+    @Then("user should see results are more than {int}")
+    public void userShouldSeeResultsAreMoreThan(int results) {
+        Assert.assertTrue(Long.parseLong(googleSearchPage.resultBar.getText()
+                .split(" ")[1].replace(",", "")) > results); // 10950000000
     }
 }
