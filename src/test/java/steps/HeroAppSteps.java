@@ -118,12 +118,12 @@ public class HeroAppSteps {
 
     @When("user right clicks on rectangle box")
     public void userRightClicksOnRectangleBox() {
-        //
         ActionsUtil.rightClick(heroAppPage.rectangleBox);
     }
 
     @Then("user should see a popup displaying message {string}")
     public void userShouldSeeAPopupDisplayingMessage(String alertText) {
         Assert.assertEquals(alertText, AlertHandler.getAlertText(driver));
+        AlertHandler.dismissAlert(driver);
     }
 }

@@ -1,3 +1,4 @@
+@Regression @HeroApp
 Feature: HeroApp Functionalities
 
   Scenario: Validate add/remove element page
@@ -10,7 +11,7 @@ Feature: HeroApp Functionalities
     When user clicks on "Delete" button
     Then user should not see "Delete" button
 
-    @temp
+
   Scenario: Validate context menu page
     Given user navigates to "http://the-internet.herokuapp.com/"
     When user clicks on "Context Menu" link
