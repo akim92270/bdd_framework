@@ -1,0 +1,32 @@
+package steps;
+
+import cucumber.api.java.en.And;
+import cucumber.api.java.en.When;
+import org.junit.Assert;
+import org.junit.Before;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import pages.WikipediaPage;
+import utilities.Driver;
+
+public class WikipediaSteps {
+    WebDriver driver;
+    WikipediaPage wikipediaPage;
+
+    @Before
+    public void setup(){
+        driver = Driver.getDriver();
+        wikipediaPage = new WikipediaPage();
+    }
+    @When("user searches for {string} on Wikpedia")
+    public void userSearchesForOnWikpedia(String key) {
+        wikipediaPage.searchInputBox.sendKeys(key + Keys.ENTER);
+    }
+
+    @And("user should see {string} in the first heading")
+    public void userShouldSeeInTheFirstHeading(String key) {
+        Assert.assertTrue(wikipediaPage.firstHeading.isDisplayed());
+        Assert.assertTrue(wikipediaPage.firstHeading.getText().contains(key));
+
+    }
+}

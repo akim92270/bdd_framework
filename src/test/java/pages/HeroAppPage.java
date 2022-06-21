@@ -36,6 +36,24 @@ public class HeroAppPage {
     @FindBy(id = "hot-spot")
     public WebElement rectangleBox;
 
+    @FindBy(css = ".radius")
+    public WebElement loginButton;
+
+    @FindBy(css = ".example>h2")
+    public WebElement getLoginPageH2;
+
+    @FindBy(css = ".example>h4")
+    public WebElement subHeaderParagraph;
+
+    @FindBy(css = "input[id='username']")
+    public WebElement usernameInputBox;
+
+    @FindBy(css = "input[id='password']")
+    public WebElement passwordInputBox;
+
+    @FindBy(id = "flash-messages")
+    public WebElement loginErrorMessageBox;
+
     public void clickOnCategoryLink(String linkText){
         for(WebElement link : categoryLinks){
             if(link.getText().equals(linkText)){

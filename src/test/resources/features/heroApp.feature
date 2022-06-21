@@ -1,8 +1,9 @@
 @Regression @HeroApp
 Feature: HeroApp Functionalities
 
+  Background: Given user navigates to "http://the-internet.herokuapp.com/"
+
   Scenario: Validate add/remove element page
-    Given user navigates to "http://the-internet.herokuapp.com/"
     When user clicks on "Add/Remove Elements" link
     Then user should see "Add/Remove Elements" heading
     And user should see "Add Element" button
@@ -13,7 +14,6 @@ Feature: HeroApp Functionalities
 
 
   Scenario: Validate context menu page
-    Given user navigates to "http://the-internet.herokuapp.com/"
     When user clicks on "Context Menu" link
     Then user should see "Context Menu" heading
     And user should see "Context menu items are custom additions that appear in the right-click menu." text
