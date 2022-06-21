@@ -1,9 +1,10 @@
 @Google
-
-#if you want to run everything to be under Google then put it above your feature and delete the following @Google
+  #Each feature file must have a Feature name
+  #To declare all scenarios in the feature file with a tag, we can put tag on the top of Feature
 Feature: Google Search Functionality
 
-  Background: Given user navigates to "https://www.google.com/"
+  Background:
+    Given user navigates to "https://www.google.com/"
 
   @Regression
   Scenario: Validate Google search
@@ -14,6 +15,4 @@ Feature: Google Search Functionality
   @Smoke
   Scenario: Validate Google search results
     When user searches for "Apple" on Google
-    Then user should see results are more than 0
-
-
+    Then user should see results are more than 5000000
