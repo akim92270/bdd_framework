@@ -1,4 +1,4 @@
-@Regression @HeroApp
+@Regression
 Feature: HeroApp Functionalities
 
   Background: Given user navigates to "http://the-internet.herokuapp.com/"
