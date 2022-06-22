@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = "steps", //telling where are steps are.
-        tags = "@Google", //what tagToBeExecuted
+        tags = "Smoke", //what tagToBeExecuted
         dryRun = false, //to see missing texts.
         monochrome = false, //console true/false color changes
         plugin = {"html:target/cucumber-reports",
