@@ -10,7 +10,7 @@ Feature: Google Search Functionality
   Scenario: Validate Google search
     When user searches for "Tesla" on Google
     Then user should see "Tesla" in the url
-    And user should see "Tesla" in the title
+    And user should see "tesla" in the title
 
   @Smoke
   Scenario: Validate Google search results

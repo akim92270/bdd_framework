@@ -12,7 +12,10 @@ import org.junit.runner.RunWith;
         tags = "@Google", //what tagToBeExecuted
         dryRun = false, //to see missing texts.
         monochrome = false, //console true/false color changes
-        plugin = "html:target/cucumber-reports"
+        plugin = {"html:target/cucumber-reports",
+                "json:target/cucumber-reports/Cucumber.json",
+                "pretty"
+        }
 )
 
 public class Runner {
