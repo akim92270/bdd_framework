@@ -14,5 +14,5 @@ Feature: Hero App Login Functionality
       |          |                      | Your username is invalid!      |
       | johndoe  | abc1234              | Your username is invalid!      |
       | tomsmith | 12345                | Your password is invalid!      |
-      | tomsmith | SuperSecretPassword  | Your password is invalid!      |
+      | tomsmith | SuperSecretPassword  | Your password is invalid!      |.
       | tomsmith | SuperSecretPassword! | You logged into a secure area! |
