@@ -1,17 +1,37 @@
 package steps;
 
+import cucumber.api.java.Before;
 import cucumber.api.java.en.Then;
+import io.cucumber.datatable.DataTable;
+import org.junit.Assert;
+import org.openqa.selenium.WebDriver;
+import pages.EtsyHomePage;
+import utilities.Driver;
+
 
 public class EtsySteps {
-    @Then("user should see below menu item links")
-    public void userShouldSeeBelowMenuItemLinks() {
-        // Write code here that turns the phrase above into concrete actions
-        // For automatic transformation, change DataTable to one of
-        // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
-        // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
-        // Double, Byte, Short, Long, BigInteger or BigDecimal.
-        //
-        // For other transformations you can register a DataTableType.
-        throw new cucumber.api.PendingException();
+
+    WebDriver driver;
+    EtsyHomePage etsyHomePage;
+
+    @Before
+    public void setup(){
+        driver = Driver.getDriver();
+        etsyHomePage = new EtsyHomePage();
     }
+
+
+    @Then("user should see below menu item links")
+    public void user_should_see_below_menu_item_links(DataTable dataTable) {
+        //List<String> expectedTexts = dataTable.asList(); // new ArrayList<>();
+        //expectedTexts.add("Summer Clothing & Accessories");
+
+        for (int i = 0; i < dataTable.asList().size(); i++){
+            //System.out.println("text from feature file = " + expectedTexts.get(i));
+            //System.out.println("text from actual elements = " + etsyHomePage.mainNavigationItems.get(i).getText());
+            //Assert.assertEquals(expectedTexts.get(i), etsyHomePage.mainNavigationItems.get(i).getText());
+            Assert.assertEquals(dataTable.asList().get(i), etsyHomePage.mainNavigationItems.get(i).getText());
+        }
+    }
+
 }
