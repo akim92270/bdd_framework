@@ -9,9 +9,9 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.NotFoundException;
 import org.openqa.selenium.WebDriver;
 import pages.HeroAppPage;
+import utilities.ActionsUtil;
 import utilities.AlertHandler;
 import utilities.Driver;
-import utils.ActionsUtil;
 
 public class HeroAppSteps {
 
